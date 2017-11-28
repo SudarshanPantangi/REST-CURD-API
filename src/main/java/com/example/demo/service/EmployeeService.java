@@ -11,8 +11,8 @@ public class EmployeeService implements IEmployeeService {
 	private IEmployeeDAO iemployeeDAO;
 
 	@Override
-	public void updateEmployee(String status) {
-		iemployeeDAO.updateEmployee(status);
+	public void updateEmployee(String status,String studendGander,Integer studendAge) {
+		iemployeeDAO.updateEmployee(status,studendGander,studendAge);
 	}
 	
 	@Override

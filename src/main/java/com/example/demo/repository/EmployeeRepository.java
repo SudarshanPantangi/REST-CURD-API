@@ -14,8 +14,8 @@ public interface EmployeeRepository extends JpaRepository<EmployeeModel, String>
 	@Query("select c from EmployeeModel c where c.studendLname = :studendLname")
 	List<EmployeeModel> findByFname(@Param("studendLname") String studendLname);
 	
-	@Query("select c from EmployeeModel c where c.status = :status")
-	List<EmployeeModel> findByStatus(@Param("status") String status);
+	@Query("select c from EmployeeModel c where (c.status = :status and c.studendGander= :studendGander and c.studendAge= :studendAge)")
+	List<EmployeeModel> findByStatus(@Param("status") String status,@Param("studendGander") String studendGander,@Param("studendAge") Integer studendAge);
 	
 	@Query("select c from EmployeeModel c where c.id BETWEEN :id1 AND :id2")
 	List<EmployeeModel> findBetwIds(@Param("id1") Integer id1,@Param("id2") Integer id2);

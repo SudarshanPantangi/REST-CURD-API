@@ -59,10 +59,10 @@ public class EmployeeController {
 		return employeeRepository.findBetwIds(id1, id2);
 	}
 
-	@GetMapping(value = "/getByStatusUpdate/{status}")
-	public List<EmployeeModel> getByStatusUpdate(@PathVariable final String status) {
-		employeeModelList = employeeRepository.findByStatus(status);
-		iemployeeService.updateEmployee(status);
+	@GetMapping(value = "/getByStatusUpdate/{status}/{studendGander}/{studendAge}")
+	public List<EmployeeModel> getByStatusUpdate(@PathVariable final String status,@PathVariable final String studendGander,@PathVariable final Integer studendAge) {
+		employeeModelList = employeeRepository.findByStatus(status,studendGander,studendAge);
+		iemployeeService.updateEmployee(status,studendGander,studendAge);
 		return employeeModelList;
 	}
 

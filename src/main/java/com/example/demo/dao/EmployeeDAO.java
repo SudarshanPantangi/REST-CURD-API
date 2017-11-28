@@ -14,9 +14,9 @@ public class EmployeeDAO implements IEmployeeDAO {
 	private EntityManager entityManager;
 
 	@Override
-	public void updateEmployee(String status) {
+	public void updateEmployee(String status,String studendGander,Integer studendAge) {
 		Query query = entityManager
-				.createNativeQuery("UPDATE employee_table1 SET status = 'inactive' WHERE status= '"+status+"'");
+				.createNativeQuery("UPDATE employee_table1 SET status = 'inactive' WHERE status= '"+status+"' and studen_Gander = '"+studendGander+"' and studen_Age = '"+studendAge+"'");
 		query.executeUpdate();
 	}
 	

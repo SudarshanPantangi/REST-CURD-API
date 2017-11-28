@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "employee_table1")
 public class EmployeeModel {
@@ -25,12 +27,15 @@ public class EmployeeModel {
 	@Column(name = "studen_Gander")
 	private String studendGander;
 
+	@JsonIgnore
 	@Column(name = "studen_Address")
 	private String studendAddress;
 
+	@JsonIgnore
 	@Column(name = "studen_Age")
 	private Integer studendAge;
 	
+	@JsonIgnore
 	@Column(name = "status")
 	private String status;
 
